@@ -1,6 +1,8 @@
+apiVersion: choreo.dev/v1
+kind: Component
 schemaVersion: 1.0
 endpoints:
-- name: email-validation-endpoint
-  service:
-    port: 8000
-  type: HTTP
+  - name: email-validation-endpoint
+    service:
+      port: 8000
+    type: HTTP

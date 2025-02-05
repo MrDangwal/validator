@@ -6,6 +6,19 @@ import disposable
 import rolebased
 import smtp
 
+
+
+
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+@app.post("/validate_email/")
+def validate_email(request: EmailRequest):
+    logging.info(f"Received request: {request.email}")
+    return [process_email(email) for email in request.email] if isinstance(request.email, list) else process_email(request.email)
+
+
 app = FastAPI()
 
 class EmailRequest(BaseModel):

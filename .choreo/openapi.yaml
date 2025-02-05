@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: Email Validation API
+  description: A FastAPI-based service for validating email addresses.
+  version: 1.0.0
+servers:
+  - url: "http://localhost:8000"
+paths:
+  /validate_email/:
+    post:
+      summary: Validate a single or multiple email addresses
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  oneOf:
+                    - type: string
+                    - type: array
+                      items:
+                        type: string
+                  description: A single email or a list of emails to validate
+                  example:
+                    - "test@example.com"
+                    - "user@example.org"
+      responses:
+        "200":
+          description: Validation results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    status:
+                      type: string
+                    details:
+                      type: string

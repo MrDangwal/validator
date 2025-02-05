@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+email-validator
+disposable-email-domains
+requests
+dnspython
+

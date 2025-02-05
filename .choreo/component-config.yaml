@@ -1,8 +1,13 @@
 apiVersion: core.choreo.dev/v1beta1
 kind: ComponentConfig
-schemaVersion: 1.0
+schemaVersion: 1.1
 endpoints:
-  - name: email-validation-endpoint
+  - name: email-validation-api
+    displayName: Email Validation API
     service:
+      basePath: /validate
       port: 8000
-    type: HTTP
+    type: REST
+    networkVisibilities:
+      - Public
+    schemaFilePath: openapi.yaml

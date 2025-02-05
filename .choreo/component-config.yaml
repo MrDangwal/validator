@@ -1,5 +1,5 @@
-apiVersion: choreo.dev/v1
-kind: Component
+apiVersion: core.choreo.dev/v1beta1
+kind: ComponentConfig
 schemaVersion: 1.0
 endpoints:
   - name: email-validation-endpoint

@@ -13,7 +13,7 @@ paths:
         urls:
           - http://localhost:8000
         advanceEndpointConfig:
-          timeoutInMillis: 700000 # Sets a 70-second timeout for this endpoint
+          timeoutInMillis: 100000 # Sets a 70-second timeout for this endpoint
       requestBody:
         required: true
         content:

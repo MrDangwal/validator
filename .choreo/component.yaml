@@ -5,7 +5,7 @@ endpoints:
   - name: email-validation-api
     displayName: Email Validation API
     service:
-      basePath: /
+      basePath: /validate_email/
       port: 8000
     type: REST
     networkVisibilities:
